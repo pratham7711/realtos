@@ -1,0 +1,47 @@
+.container{
+    width: 250px;
+    height: 350px;
+    background-color: white;
+    border-radius: 1rem;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem;
+}
+
+.title{
+    position: absolute;
+    top: 1rem;
+    font-weight: 200;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color : white;
+    z-index: 1;
+}
+
+.imgwrapper{
+    position: absolute;
+    border-radius: 1rem;
+    top: 0;
+    overflow: hidden;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+ 
+  .innerimg {
+    transition: 0.3s;
+  }
+  
+  .innerimg:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Other styling elements, that are not necessary for the example */
+  
+  .imgwrapper {
+    display: inline-block;
+    box-sizing: border-box;
+  }

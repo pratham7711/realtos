@@ -1,0 +1,60 @@
+/* Footer.module.css */
+.footer {
+  width: 100%;
+  background-color: #D44E4D;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 0;
+  height: 40vh;
+}
+
+
+.about{
+  width: 30%;
+  line-height: 1.5;
+}
+.footer h3{
+  margin-bottom: 1rem ;
+}
+
+.footer p {
+  line-height: 2;
+  margin-bottom: 2rem ;
+}
+
+.tour{
+  width: 15%;
+}
+.tour ul{
+  list-style: none;
+}
+.tour ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+.tour ul li{
+  margin: 2rem 0 ;
+}
+.company ul li{
+  margin: 2rem 0 ;
+}
+
+
+.company ul{
+  list-style: none;
+}
+.company ul li a{
+  color: white;
+  text-decoration: none;
+}
+.company{
+  width: 15%;
+}
+.subscribe{
+  width: 20%;
+}
+
+
+
