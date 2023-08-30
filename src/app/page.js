@@ -149,7 +149,7 @@ export default function Home() {
 
       <div className={styles.recom}>
         <div className={styles.recomtext}>
-          <h2 style={{color:"red"}}>Discover</h2>
+          <h2 style={{color:"#313190"}}>Discover</h2>
           <h1>Best recommendation</h1>
           <div style={{display:"flex" , justifyContent:"space-between" , alignItems:"center"}}>
             <p style={{width:"45ch"}}>Discover our exclusive selection of the finest one-of-a-kind luxury properties architecture masterpieces</p>
@@ -171,10 +171,10 @@ export default function Home() {
         
           <div className={styles.displaytext}>
             
-            <p style={{margin:"1rem" , color:"#D44E4D" , fontWeight:"600" , fontSize:"1.2rem"}}>ABOUT US</p>
+            <p style={{margin:"1rem" , color:"#313190" , fontWeight:"600" , fontSize:"1.2rem"}}>ABOUT US</p>
             <h1 style={{margin:"1rem" , fontSize:"2rem"}}>How much is your Property worth now?</h1>
             <p style={{margin:"1rem" , lineHeight:"1.5"}}>Over time, we have solidified our standing as experts in the local area, building a remarkable reputation for our profound insights. This has naturally led to capturing the interest and curiosity of prospective buyers.</p>
-            <button style={{backgroundColor:"#D44E4D" , color:"white" , border:"none" , padding:"1rem 2rem" , margin:"1rem"}}>Learn More</button>
+            <button style={{backgroundColor:"#313190" , color:"white" , border:"none" , padding:"1rem 2rem" , margin:"1rem"}}>Learn More</button>
           </div>
       </div>
 

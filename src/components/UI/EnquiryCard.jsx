@@ -14,7 +14,7 @@ const EnquiryCard = (props) => {
             <h1 style={{ fontWeight:"600" , }}>1234 Elm Street</h1>
             <p style={{color:"gray" , }}> Sunnyville, CA</p>
             <div style={{display:"flex" , alignItems:"center" , margin:"1rem 0" }}>
-                <p style={{color:" #D44E4D" , fontSize:"2rem"}}>$350,000</p>
+                <p style={{color:" #313190" , fontSize:"2rem"}}>$350,000</p>
                 <p style={{height:"100%" , backgroundColor:"lightgray" , color:"white" , padding:"0.5rem" , margin:"0 2rem "}}>Spacious</p>
             </div>
             <button className={styles.btn}>Send Enquiry</button>

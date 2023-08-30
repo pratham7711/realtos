@@ -35,14 +35,14 @@
 .btn{
     width: 100%;
     background-color: white;
-    border: 1px solid #D44E4D;
-    color:  #D44E4D;
+    border: 1px solid #313190;
+    color:  #313190;
     padding: 1rem ;
     margin: 1rem 0;
 }
 
 .btn:hover{
-    background-color: #D44E4D;
+    background-color: #313190;
     color: white;
 }
 
