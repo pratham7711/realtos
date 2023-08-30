@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import Header from "@/components/Header";
 import Image from "next/image";
 import banner from "../../public/homepageedit.jpg";
-import icon from "../../public/5.png";
+// import icon from "../../public/5.png";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import styled from "@emotion/styled";

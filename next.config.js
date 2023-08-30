@@ -1,6 +1,10 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-    // images:{domains:["unsplash.com"]},
-}
-
-module.exports = nextConfig
+    output:"export",
+    reactStrictMode: true,
+    swcMinify: true,
+    images: {
+      unoptimized: true,
+    },
+  };
+  
+  module.exports = nextConfig;

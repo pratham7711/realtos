@@ -38,8 +38,8 @@ const Footer = () => {
         <h3>Subscribe</h3>
         <p>Stay up-to-date with our latest news and property listings by subscribing to our newsletter.</p>
         <div className={styles.subscribeForm}>
-          <input style={{padding: "0.5rem 1rem" , borderRadius:"2rem 0  0 2rem" , border:"none"}} type="email" placeholder="Enter your email" className={styles.subscribeInput} />
-          <button style={{borderRadius:"0 2rem 2rem 0" , padding:"0.5rem 1rem" , border:"none"}} className={styles.subscribeButton}>Subscribe</button>
+          <input style={{width:"70%",padding: "0.5rem 1rem" , borderRadius:"2rem 0  0 2rem" , border:"none"}} type="email" placeholder="Enter your email" className={styles.subscribeInput} />
+          <button style={{width:"30%",borderRadius:"0 2rem 2rem 0" , padding:"0.5rem 1rem" , paddingLeft:"0.2rem" , border:"none",overflow:"hidden"}} className={styles.subscribeButton}>Submit</button>
         </div>
       </div>
     </footer>

@@ -3,8 +3,9 @@
     /* align-items: center; */
     justify-content: center;
     padding: 1rem 0;
+    margin: 2rem;
     border: 1px groove lightgray;
-    width: 30%;
+    width: 350px;
     position: relative;
     height: 30rem
 }
@@ -44,3 +45,10 @@
     background-color: #D44E4D;
     color: white;
 }
+
+@media only screen and (max-width: 800px) {
+    
+    .container{
+        margin: auto;
+    }
+  }
