@@ -3,117 +3,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* overflow: hidden; */
 }
-
-.banner {
+.body{
   width: 80%;
-  text-align: center;
   align-items: center;
-  
 }
 
-.content{
+.banner{
   width: 100%;
-  
-  text-align: left;
-  display: flex;
-  align-items: center;
-  /* justify-content: space-around; */
-  flex-wrap: wrap;  
-}
-
-.title{
-  line-height: 2;
-  font-size: 4rem;
-  font-weight:800;
-  margin-right: 2rem;
-  color: black;
-}
-
-
-.capsule{
-  width: 10rem;
-  height: 5rem;
-  border-radius: 5rem ;
-  background-image: url("../../public/11.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* position: relative; */
-  margin-right:2rem ;
-  /* overflow: hidden; */
-  background-color: aqua;
-  
-}
-
-.bannerimg {
-  width: 80%;
-  height: 60vh;
-  border-radius: 1rem;
-  /* overflow: hidden; */
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
 }
 
-.imageWrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.img{
   border-radius: 1rem;
   overflow: hidden;
 }
 
-.search{
-  position: absolute;
-  bottom: -10%;
-  margin: 0 auto;
-  width: 75%;
-  height: 20%;
-  background-color: white;
-  border-radius: 10rem;
-  -webkit-box-shadow: 0px 0px 24px 11px rgba(199,199,199,1);
-  -moz-box-shadow: 0px 0px 24px 11px rgba(199,199,199,1);
-  box-shadow: 0px 0px 24px 11px rgba(199,199,199,1);
-
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.item{
-  width: 25%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.itemleft{
-  display: flex;
-  padding: 0.5rem;
-  justify-content: center;
-  border-radius: 50%;
-  width: 20%;
-  color: #2affff;
-  align-items: center;
-  background-color: rgb(202, 255, 255);
-}
-
-.itemright{
-  width: 80%;
-  padding: 0 1rem;
-  /* margin: 1rem; */
-}
-
-.itemtitle{
-  font-size: larger;
-}
 
 .countries{
   margin: 5rem 0;
-  width: 80%;
+  width: 100%;
   /* background-color: cyan; */
   display: flex;
   flex-direction: column;
@@ -143,14 +54,14 @@
 .recent{
   /* display: flex; */
   /* flex-direction: column; */
-  width: 80%;
+  width: 100%;
   /* display: flex; */
 }
 
 .btnrow{
   display: flex;
   width: 100%;
-  margin: 1rem;
+  /* margin: 1rem; */
   justify-content: space-between;
 }
 
@@ -159,11 +70,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   
 }
  
 .recom{
-    width: 80%;
+    width: 100%;
   }
 
   .recomtext{
@@ -190,7 +102,7 @@
 
   .display{
     
-    width: 80%;
+    width: 100%;
     /* border: 1px solid black; */
     margin: 5rem 0;
     display:flex;
@@ -198,15 +110,20 @@
   }
 
   .displayimg{
-    width: 40vw;
-    height: 25vw;
-    background-image: url("../../public/interior.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    overflow: hidden;
+    width: 50%;
+    position: relative;
   }
   
 
+.recomrow{
+  display:flex ;
+  justify-content:space-between ;
+  align-items:center;
+}
+
+.recomrow p{
+  width: 40ch;
+}
 
   .displaytext{
     width: 50%;
@@ -215,3 +132,73 @@
   }
 
 
+@media (width < 1000px)
+{
+  .display{
+    flex-direction: column;
+    align-items: center ;
+  }
+
+  .displaytext{
+    width: 100%;
+  }
+
+  .displayimg{
+    width: 100%;
+    height: 50vh;
+    margin: 0 auto;
+  }
+
+}
+
+  @media (width <= 800px){
+    .body{
+      width: 100%;
+    }
+
+    .img{
+      overflow: visible;
+    }
+
+    .countries{
+      /* margin: 5rem 0; */
+      width: 100%;
+      /* background-color: cyan; */
+      display: flex;
+      flex-direction: column;
+      
+      text-align: center;
+      align-items: center;
+      /* margin-bottom: 20rem; */
+    }
+    
+    .countriestext{
+      width: 100%;
+      /* background-color: white; */
+      color: rgb(17, 17, 91);
+      margin: 2rem 0;
+    
+    }
+    
+    .countriescontainer{
+      margin: 2rem 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      
+    }
+
+    .btnrow{
+      padding: 0 1rem;
+    }
+
+    .recomrow{
+      flex-direction: column;
+    }
+
+    .recomrow p {
+      width: auto;
+    }
+    
+  }

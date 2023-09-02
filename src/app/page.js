@@ -2,15 +2,12 @@
 import styles from "./page.module.css";
 import Header from "@/components/Header";
 import Image from "next/image";
+import home from "../../public/Component.jpg";
 import banner from "../../public/homepageedit.jpg";
-// import icon from "../../public/5.png";
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import ApartmentIcon from '@mui/icons-material/Apartment';
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
-import MenuIntroduction from "@/components/searchdropdown";
 import Card from "@/components/UI/Card";
-
+import interior from "../../public/interior.jpg"
 import Spain from '../../public/Spain.jpg'
 import India from '../../public/India.jpg'
 import Paris from '../../public/Paris.jpg'
@@ -18,7 +15,7 @@ import London from '../../public/London.jpg'
 import Ticket from "@/components/UI/Ticket";
 import EnquiryCard from "@/components/UI/EnquiryCard";
 import Footer from "@/components/Footer";
-import { AttachMoney } from "@mui/icons-material";
+import Search from "@/components/Search";
 
 
 
@@ -60,74 +57,44 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Header />
+      <div className={styles.body}>
 
       {/* Banner */}
+      <Image
+      src={home}
+      alt="Discover dream property"
+      sizes="100vw"
+      style={{
+        width: '100%',
+        height: 'auto',
+        marginBottom:'2rem'
+      }}
+    />
+
+
       <div className={styles.banner}>
 
-        <div className={styles.content}>
-          {/* <h1 className={styles.title}>
-            DISCOVER YOUR NEXT DREAM PROPERTIES
-          </h1> */}
-            <h1 className={styles.title} >DISCOVER </h1>
-            <span className={styles.capsule}>
-              {/* <Image src={icon} fill={true} alt="HOME" /> */}
-            </span>
-            <h1 className={styles.title}>YOUR</h1>
-            <h1 className={styles.title}>NEXT</h1>
-            <h1 className={styles.title}>DREAM</h1>
-            <p style={{width:"40ch"}} >
-              Explore your future home among our curated selection of dream
-              properties. Your perfect living space awaits you.
-            </p>
-            <h1 className={styles.title}>PROPERTIES</h1>
-        
-        </div>
+      <div className={styles.img}> 
+      <Image
+      src={banner}
+      alt="Picture of the author"
+      sizes="100vw"
+      style={{
+        width: '100%',
+        height: 'auto',
+        // borderRadius:"1rem"
+      }}
+      />
       </div>
-
-    <div className={styles.bannerimg}>
-      <div className={styles.imageWrapper}>
-        <Image src={banner} fill   style={{objectFit:"cover",objectPosition:"center"}} />
+      <Search className={styles.search}/>
       </div>
-      <div className={styles.search}>
-      <div className={styles.item}>
-        <div className={styles.itemleft}>
-            <ApartmentIcon />
-        </div>
-        <div className={styles.itemright}>
-          <h1 className={styles.itemtitle}>Property Type</h1>
-          <MenuIntroduction title="Appartment" options={["Appartments" , "Villas" , "Condo" ]}/>
-        </div>
-        </div><div className={styles.item}>
-        <div className={styles.itemleft}>
-            <LocationOnIcon />
-        </div>
-        <div className={styles.itemright}>
-          <h1 className={styles.itemtitle}>Location</h1>
-          <MenuIntroduction title="Noida" options={["Gurgaon" , "Delhi" , "Noida" ]}/>
-        </div>
-        </div><div className={styles.item}>
-        <div className={styles.itemleft}>
-            <AttachMoney />
-        </div>
-        <div className={styles.itemright}>
-          <h1 className={styles.itemtitle}>Price Range</h1>
-          <MenuIntroduction title="$1500-$2000" options={["$1500-$2000" , "$2000-$10000" , "$10000-$25000"]}/>
-        </div>
-        </div>
-        <div style={{width:"20%"}}>
-      <BootstrapButton>Search</BootstrapButton>
-      </div>
-      </div>
-    </div>
-
-
 
 
       <div className={styles.countries}>
             <h1 className={styles.countriestext}>We are available in many well-known countries</h1>
             <div className={styles.countriescontainer}>
            
-             <Card img={India} title="India" />
+            <Card img={India} title="India" />
             <Card img={Spain} title="Spain" />
             <Card img={London} title="London" />
             <Card img={Paris} title="Paris" /> 
@@ -142,7 +109,7 @@ export default function Home() {
         <div className={styles.recentlayout}>
       {['2', '3', '4', '5', '6', '7'].map((number) => (
         <Ticket key={number} img={number} />
-      ))}
+        ))}
     </div>
       </div>
 
@@ -151,22 +118,22 @@ export default function Home() {
         <div className={styles.recomtext}>
           <h2 style={{color:"#313190"}}>Discover</h2>
           <h1>Best recommendation</h1>
-          <div style={{display:"flex" , justifyContent:"space-between" , alignItems:"center"}}>
-            <p style={{width:"45ch"}}>Discover our exclusive selection of the finest one-of-a-kind luxury properties architecture masterpieces</p>
+          <div className={styles.recomrow}>
+            <p>Discover our exclusive selection of the finest one-of-a-kind luxury properties architecture masterpieces</p>
             <a style={{color:"red" , textDecoration:"none"}}>Learn More</a>
           </div>
         </div>
         <div className={styles.cards}>
         {['2', '3', '4'].map((number) => (
-        <EnquiryCard key={number} img={number} />
-      ))}
+          <EnquiryCard key={number} img={number} />
+          ))}
         </div>
       </div>
 
 
       <div className={styles.display}>
-
           <div className={styles.displayimg}>
+            <Image src={interior} alt="" fill style={{objectFit:"cover",objectPosition:"center"}}/>
           </div>
         
           <div className={styles.displaytext}>
@@ -178,7 +145,9 @@ export default function Home() {
           </div>
       </div>
 
+        </div>
       <Footer />
     </div>
   );
 }
+

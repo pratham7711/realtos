@@ -58,3 +58,26 @@
 
 
 
+@media (width < 800px )
+{
+  .footer{
+    /* flex-direction: column; */
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .about{
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  .tour{
+    width: 50%;
+  }
+  .company{
+    width: 50%;
+  }
+  .subscribe{
+    width: 80%;
+  }
+}

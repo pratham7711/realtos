@@ -1,85 +1,149 @@
-import React, { useState, useEffect } from "react";
-import styles from "./Header.module.css";
 import Image from "next/image";
-import PhoneIcon from "@mui/icons-material/Phone";
 import logoblue from "../../public/logoblue.png";
-import { Button, styled } from "@mui/material";
+import PhoneIcon from "@mui/icons-material/Phone";
+import React, { useState, useEffect } from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
 
-const Header = () => {
-  const [isVisible, setIsVisible] = useState(false);
+const pages = ['Products', 'Pricing', 'Blog'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-  const NavButton = styled(Button)({
-    boxShadow: "none",
-    textTransform: "none",
-    fontSize: 16,
-    padding: "6px 12px",
-    lineHeight: 1.5,
-    color:"#606266",
-    backgroundColor: "transparent",
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-    "&:hover": {
-      backgroundColor: "#F2F2F2",
-      borderColor: "#F2F2F2",
-    },
-    "&:active": {
-      boxShadow: "none",
-      backgroundColor: "#F2F2F2",
-      borderColor: "#F2F2F2",
-    },
-    "&:focus": {
-      boxShadow: "0 0 0 0.2rem #F2F2F2",
-    },
-  });
+function Header() {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsVisible(scrollTop > 20); // Adjust the scroll position threshold
-    };
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   return (
-    <div
-      className={styles.container}  
-    >
-      <div
-        className={styles.left}
-      >
-        <Image
-          src={logoblue}
-          width={200}
-          height={50}
-          alt="Realtos"
-        />
-          <NavButton> Home</NavButton>
-          <NavButton> Projects</NavButton>
-          <NavButton> About Us</NavButton>
-          <NavButton> Contact Us</NavButton>
-          </div>
-        <div
-          className={styles.right}
-        >
-          <PhoneIcon fontSize="small"></PhoneIcon>  
-          <p style={{ marginLeft: "0.5rem" }}> 011-21156-21156</p>
-        </div>
-    </div>
-  );
-};
+    <AppBar position="static" sx={{backgroundColor:"white", marginBottom:"2rem" , color:"black"}}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, m: 2 }} >
+          <Image src={logoblue} width={200} height={50} alt=""/>
+          </Box>
+          {/* <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            LOGO
+          </Typography> */}
 
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              sx={{color:"black"}}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                color:"black",
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center" sx={{color:"black"}}>{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 2 , flexGrow:1 }} >
+          <Image src={logoblue} width={100} height={25} alt=""/>
+          </Box>
+          {/* <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'black',
+              textDecoration: 'none',
+            }}
+          >
+            LOGO
+          </Typography> */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'black', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+          <Box sx={{ flexGrow: 0, display:"flex" }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <PhoneIcon alt="" sx={{mr:2}}/>
+              </IconButton>
+              <Typography sx={{ display: { xs: 'none', md: 'flex' }}}>011-21556-21556</Typography>
+            </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+}
 export default Header;

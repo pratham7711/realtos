@@ -7,7 +7,7 @@ const Card = (props) => {
 <div className={styles.container}>
     <h1 className={styles.title}>{props.title}</h1>
     <div className={styles.imgwrapper}>
-        <Image className={styles.innerimg} src={props.img} fill  style={{objectFit:"cover",objectPosition:"center"}}/>
+        <Image className={styles.innerimg} alt='' src={props.img} fill  style={{objectFit:"cover",objectPosition:"center"}}/>
     </div>
 </div>
 
